@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        .button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .products {
+            margin-top: 20px;
+            display: none;
+        }
+        .product {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Product Catalog</h1>
+    <p>Click a button to view the products.</p>
+
+    <button class="button" onclick="showProducts('category1')">Category 1</button>
+    <button class="button" onclick="showProducts('category2')">Category 2</button>
+
+    <div id="category1" class="products">
+        <h2>Category 1 Products</h2>
+        <div class="product">Product 1.1</div>
+        <div class="product">Product 1.2</div>
+        <div class="product">Product 1.3</div>
+    </div>
+
+    <div id="category2" class="products">
+        <h2>Category 2 Products</h2>
+        <div class="product">Product 2.1</div>
+        <div class="product">Product 2.2</div>
+        <div class="product">Product 2.3</div>
+    </div>
+
+    <script>
+        function showProducts(categoryId) {
+            // Hide all product categories
+            document.querySelectorAll('.products').forEach(div => {
+                div.style.display = 'none';
+            });
+            // Show the selected category
+            document.getElementById(categoryId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
